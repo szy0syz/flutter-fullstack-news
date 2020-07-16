@@ -1,14 +1,3 @@
-# flutter-fullstack-news
-
-一个flutter全栈项目：flutter、eggjs、GraphQL、strapi、docker-compose
-
-## Client
-
-### Notes
-
-极简 `main.dart`
-
-```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,5 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-```
