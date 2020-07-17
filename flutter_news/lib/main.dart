@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_news/routes.dart';
 import 'package:flutter_news/pages/welcome/welcome.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
+      routes: staticRoutes,
       home: WelcomePage(),
     );
   }

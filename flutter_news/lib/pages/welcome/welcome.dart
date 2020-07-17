@@ -93,7 +93,9 @@ class _WelcomePageState extends State<WelcomePage> {
         textColor: AppColors.primaryElementText,
         child: Text("Get started"),
         shape: RoundedRectangleBorder(borderRadius: Radii.k6pxRadius),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/sign-in");
+        },
       ),
     );
   }

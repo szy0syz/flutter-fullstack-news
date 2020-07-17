@@ -1,4 +1,6 @@
 library values;
 
-export 'radii.dart';
 export 'colors.dart';
+export 'borders.dart';
+export 'radii.dart';
+export 'shadows.dart';

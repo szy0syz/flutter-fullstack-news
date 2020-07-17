@@ -111,3 +111,75 @@ Widget _buildPageHeadTitle() {
 ```
 
 - `FlatButton` 组件默认不能设宽高，可以包一个 `Container` 后拉宽这个按钮
+- 如何分析一个页面组件的构成？
+  - **从上到下、从外到内、从左到右**
+
+![1](assets/images/layout.png)
+
+- 根据以上分析后搭建骨架
+
+```dart
+class _SignImState extends State<SignIn> {
+  Widget _buildLogo() {
+    return Container();
+  }
+
+  Widget _buildInputForm() {
+    return Container();
+  }
+
+  Widget _buildThirdPartyLogin() {
+    return Container();
+  }
+
+  Widget _buildSignupButton() {
+    return Container();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            _buildLogo(),
+            _buildInputForm(),
+            Spacer(),
+            _buildThirdPartyLogin(),
+            _buildSignupButton(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+- `flutter` 中的 `Stack` 相当于 `CSS` 中的相对定位的意思
+  - 而 `Positioned` 就相当于 绝对定位的意思
+- 关于如何抽取一个组件？
+  - 顺序：先把它的功能实现了，再把它抽出来，别慌着抽！
+- flutter 中的表单验证 `validator.dart`
+
+```dart
+/// 检查邮箱格式
+bool kIsEmail(String input) {
+  if (input == null || input.isEmpty) return false;
+  // 邮箱正则
+  String regexEmail = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*\$";
+  return RegExp(regexEmail).hasMatch(input);
+}
+
+/// 检查字符长度
+bool kCheckStringLength(String input, int length) {
+  if (input == null || input.isEmpty) return false;
+  return input.length >= length;
+}
+```
+
+- **`Flutter` 中一个页面的经典组成：**
+  - 1. 成员变量
+  - 2. 事件函数
+  - 3. 界面函数 (`render function`)
+  - 4. `build()`
