@@ -110,3 +110,4 @@ Widget _buildPageHeadTitle() {
 }
 ```
 
+- `FlatButton` 组件默认不能设宽高，可以包一个 `Container` 后拉宽这个按钮
