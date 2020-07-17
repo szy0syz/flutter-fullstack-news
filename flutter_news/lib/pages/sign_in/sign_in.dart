@@ -126,7 +126,7 @@ class _SignInState extends State<SignIn> {
             child: Row(
               children: <Widget>[
                 btnFlatButtonWidget(
-                  onPressed: () {},
+                  onPressed: _handleNavSignUp,
                   gbColor: AppColors.thirdElement,
                   title: "Sign up",
                 ),
@@ -218,7 +218,7 @@ class _SignInState extends State<SignIn> {
         width: 294,
         gbColor: AppColors.secondaryElement,
         fontColor: AppColors.primaryText,
-        title: "I have an account",
+        title: "Sign up",
         fontWeight: FontWeight.w500,
         fontSize: 16,
       ),

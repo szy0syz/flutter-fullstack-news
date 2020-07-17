@@ -183,3 +183,50 @@ bool kCheckStringLength(String input, int length) {
   - 2. 事件函数
   - 3. 界面函数 (`render function`)
   - 4. `build()`
+
+- 再次按UI设计稿出骨架
+
+![signup](assets/images/signup_layout.png)
+
+```dart
+Widget build(BuildContext context) {
+  return Scaffold(
+    resizeToAvoidBottomInset: false,
+    body: Center(
+      child: Column(
+        children: <Widget>[
+          Divider(height: 1),
+          _buildLogo(),
+          _buildInputForm(),
+          Spacer(),
+          _buildThirdPartyLogin(),
+          _buildHaveAccountButton(),
+        ],
+      ),
+    ),
+  );
+}
+```
+
+- 封装一个透明的 `AppBar` 页面导航栏
+
+```dart
+Widget transparentAppBar({
+  @required BuildContext context,
+  List<Widget> actions,
+}) {
+  return AppBar(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    title: Text(""),
+    leading: IconButton(
+      icon: Icon(Icons.arrow_back),
+      color: AppColors.primaryText,
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+    actions: actions,
+  );
+}
+```
