@@ -1,23 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news/common/wigdets/widgets.dart';
 import 'package:flutter_news/common/utils/utils.dart';
-
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/values/values.dart';
-import '../../common/values/values.dart';
-import '../../common/values/values.dart';
-import '../../common/values/values.dart';
+import 'package:flutter_news/common/values/values.dart';
 
 class SignUp extends StatefulWidget {
   @override

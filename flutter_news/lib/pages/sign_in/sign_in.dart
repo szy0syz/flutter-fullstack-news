@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_news/common/api/user.dart';
+import 'package:flutter_news/common/entities/user.dart';
 import 'package:flutter_news/common/utils/utils.dart';
 import 'package:flutter_news/common/values/values.dart';
 import 'package:flutter_news/common/wigdets/widgets.dart';
@@ -15,13 +17,23 @@ class _SignInState extends State<SignIn> {
   final TextEditingController _passController = TextEditingController();
 
   // 执行登录操作
-  _handleSignIn() {
+  _handleSignIn() async {
     if (!kIsEmail(_emailController.value.text)) {
       toastInfo(msg: '邮箱地址错误');
+      return;
     }
     if (!kCheckStringLength(_passController.value.text, 6)) {
       toastInfo(msg: '密码不能小于6位');
+      return;
     }
+
+    UserLoginRequestEntity params = UserLoginRequestEntity(
+      email: _emailController.value.text,
+      password: kSHA256(_passController.value.text),
+    );
+
+    UserLoginResponseEntity response = await UserAPI.login(params: params);
+    print([response.accessToken, response.displayName, response.channels]);
   }
 
   _handleNavSignUp() {
