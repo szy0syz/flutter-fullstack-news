@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_news/common/wigdets/widgets.dart';
+import 'package:flutter_news/common/widgets/widgets.dart';
 import 'package:flutter_news/common/utils/utils.dart';
 import 'package:flutter_news/common/values/values.dart';
 

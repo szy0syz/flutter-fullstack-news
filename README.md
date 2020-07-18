@@ -230,3 +230,60 @@ Widget transparentAppBar({
   );
 }
 ```
+
+- Flutter中如何使用 iconfont ？
+
+- **⭐️ `/pages/application` 作为主界面框架**
+  - `with` 和ts交叉类混合类似
+  - `SingleTickerProviderStateMixin` 处理页面动画改变从而生成动画效果
+  - 这个主页面框架包含了底部 `tab` 切换功能
+
+```dart
+class _ApplicationPageState extends State<ApplicationPage>
+    with SingleTickerProviderStateMixin {
+  // 当前 tab 页码
+  int _page = 0;
+  // tab 页标题
+  final List<String> _tabTitles = [
+    'Welcome',
+    'Cagegory',
+    'Bookmarks',
+    'Account'
+  ];
+  // 页控制器
+  PageController _pageController;
+
+  // 底部导航项目
+  final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[...];
+
+  // tab栏动画
+  void _handleNavBarTap(int index) {}
+
+  // tab栏页码切换
+  void _handlePageChanged(int page) {}
+
+  // 顶部导航
+  Widget _buildAppBar() {
+    return Container();
+  }
+
+  // 内容页
+  Widget _buildPageView() {
+    return Container();
+  }
+
+  // 底部导航
+  Widget _buildBottomNavigationBar() {
+    return Container();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _buildAppBar(),
+      body: _buildPageView(),
+      bottomNavigationBar: _buildBottomNavigationBar(),
+    );
+  }
+}
+```

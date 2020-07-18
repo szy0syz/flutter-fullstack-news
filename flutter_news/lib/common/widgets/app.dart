@@ -3,6 +3,8 @@ import 'package:flutter_news/common/values/values.dart';
 
 Widget transparentAppBar({
   @required BuildContext context,
+  Widget title,
+  Widget leading,
   List<Widget> actions,
 }) {
   return AppBar(

@@ -3,7 +3,7 @@ import 'package:flutter_news/common/api/user.dart';
 import 'package:flutter_news/common/entities/user.dart';
 import 'package:flutter_news/common/utils/utils.dart';
 import 'package:flutter_news/common/values/values.dart';
-import 'package:flutter_news/common/wigdets/widgets.dart';
+import 'package:flutter_news/common/widgets/widgets.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -27,13 +27,15 @@ class _SignInState extends State<SignIn> {
       return;
     }
 
-    UserLoginRequestEntity params = UserLoginRequestEntity(
-      email: _emailController.value.text,
-      password: kSHA256(_passController.value.text),
-    );
+    // UserLoginRequestEntity params = UserLoginRequestEntity(
+    //   email: _emailController.value.text,
+    //   password: kSHA256(_passController.value.text),
+    // );
 
-    UserLoginResponseEntity response = await UserAPI.login(params: params);
-    print([response.accessToken, response.displayName, response.channels]);
+    // UserLoginResponseEntity response = await UserAPI.login(params: params);
+    // print([response.accessToken, response.displayName, response.channels]);
+
+    Navigator.pushNamed(context, "/app");
   }
 
   _handleNavSignUp() {

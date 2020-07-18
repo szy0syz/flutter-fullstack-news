@@ -3,5 +3,7 @@ library values;
 export 'colors.dart';
 export 'borders.dart';
 export 'radii.dart';
+export 'cache.dart';
+export 'proxy.dart';
 export 'shadows.dart';
 export 'storage.dart';

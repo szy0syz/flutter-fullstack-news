@@ -1,19 +1,14 @@
-import 'dart:convert';
+import 'package:flutter/foundation.dart';
 
-UserLoginRequestEntity userLoginRequestEntityFromJson(String str) =>
-    UserLoginRequestEntity.fromJson(json.decode(str));
-
-String userLoginRequestEntityToJson(UserLoginRequestEntity data) =>
-    json.encode(data.toJson());
-
+// 登录请求
 class UserLoginRequestEntity {
-  UserLoginRequestEntity({
-    this.email,
-    this.password,
-  });
-
   String email;
   String password;
+
+  UserLoginRequestEntity({
+    @required this.email,
+    @required this.password,
+  });
 
   factory UserLoginRequestEntity.fromJson(Map<String, dynamic> json) =>
       UserLoginRequestEntity(
@@ -27,24 +22,17 @@ class UserLoginRequestEntity {
       };
 }
 
-/// -----------------------------------
-
-UserLoginResponseEntity userLoginResponseEntityFromJson(String str) =>
-    UserLoginResponseEntity.fromJson(json.decode(str));
-
-String userLoginResponseEntityToJson(UserLoginResponseEntity data) =>
-    json.encode(data.toJson());
-
+// 登录返回
 class UserLoginResponseEntity {
-  UserLoginResponseEntity({
-    this.accessToken,
-    this.displayName,
-    this.channels,
-  });
-
   String accessToken;
   String displayName;
   List<String> channels;
+
+  UserLoginResponseEntity({
+    @required this.accessToken,
+    this.displayName,
+    this.channels,
+  });
 
   factory UserLoginResponseEntity.fromJson(Map<String, dynamic> json) =>
       UserLoginResponseEntity(
@@ -54,8 +42,8 @@ class UserLoginResponseEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        "accessToken": accessToken,
-        "displayName": displayName,
+        "access_token": accessToken,
+        "display_name": displayName,
         "channels": List<dynamic>.from(channels.map((x) => x)),
       };
 }
