@@ -39,6 +39,7 @@ dependencies:
   # storage
   # localstorage: ^3.0.2+5
   shared_preferences: ^0.5.8
+  cached_network_image: ^2.0.0
 
   # sha
   crypto: ^2.1.3

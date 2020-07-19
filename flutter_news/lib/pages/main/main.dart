@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news/common/api/apis.dart';
-import 'package:flutter_news/common/entities/entitys.dart';
+import 'package:flutter_news/common/entities/entities.dart';
 import 'package:flutter_news/common/utils/utils.dart';
 import 'package:flutter_news/common/values/values.dart';
 import 'package:flutter_news/pages/main/categories_widget.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter_news/common/entities/entitys.dart';
+import 'package:flutter_news/common/entities/entities.dart';
 import 'package:flutter_news/common/utils/utils.dart';
 
 /// 用户

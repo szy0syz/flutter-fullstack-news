@@ -1,6 +1,7 @@
 library utils;
 
 export 'http.dart';
+export 'date.dart';
 export 'server.dart';
 export 'screen.dart';
 export 'storage.dart';
